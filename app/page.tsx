@@ -75,14 +75,6 @@ export default function Home() {
               
               {/* Animated Code Display */}
               <div className="p-4 font-mono text-sm">
-                {/* <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-gray-500"
-                >
-                  // Welcome to my portfolio
-                </motion.div> */}
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -108,22 +100,7 @@ export default function Home() {
                   >
                     "Snehangshu",
                   </motion.div>
-                  {/* <motion.div 
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.0 }}
-                    className="text-blue-400"
-                  >
-                    role:
-                  </motion.div>
-                  <motion.div 
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.2 }}
-                    className="text-yellow-400 ml-4"
-                  >
-                    "Full Stack Developer",
-                  </motion.div> */}
+                
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
