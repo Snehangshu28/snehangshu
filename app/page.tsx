@@ -10,7 +10,9 @@ import Contact from './components/Contact';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white pt-10">
+    // <div className="min-h-screen bg-black text-white pt-10">
+    <div className="min-h-screen bg-black text-white pt-10 relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-800 to-transparent opacity-20 pointer-events-none"></div>
       <Navbar />
       
       {/* Hero Section */}
@@ -78,14 +80,14 @@ export default function Home() {
               
               {/* Animated Code Display */}
               <div className="p-4 font-mono text-sm">
-                <motion.div 
+                {/* <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
                   className="text-gray-500"
                 >
                   // Welcome to my portfolio
-                </motion.div>
+                </motion.div> */}
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -111,7 +113,7 @@ export default function Home() {
                   >
                     "Snehangshu",
                   </motion.div>
-                  <motion.div 
+                  {/* <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.0 }}
@@ -126,7 +128,7 @@ export default function Home() {
                     className="text-yellow-400 ml-4"
                   >
                     "Full Stack Developer",
-                  </motion.div>
+                  </motion.div> */}
                   <motion.div 
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -141,13 +143,63 @@ export default function Home() {
                     transition={{ delay: 1.6 }}
                     className="text-yellow-400 ml-4"
                   >
-                    ["React", "Node.js", "TypeScript"],
+                    ["React", "Next.js", "Node.js", "Express", "MySQL", "MongoDB"],
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.8 }}
+                    className="text-blue-400"
+                  >
+                    attributes:
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2.0 }}
+                    className="text-yellow-400 ml-4"
+                  >
+                    {'{'}
+                  </motion.div>
+                  <div className="ml-8">
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 2.2 }}
+                      className="text-green-400"
+                    >
+                      hardworking: true,
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 2.4 }}
+                      className="text-green-400"
+                    >
+                      quickLearner: true,
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 2.6 }}
+                      className="text-green-400"
+                    >
+                      problemSolver: true
+                    </motion.div>
+                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 2.8 }}
+                    className="text-yellow-400 ml-4"
+                  >
+                    {'}'}
                   </motion.div>
                 </div>
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.8 }}
+                  transition={{ delay: 3.0 }}
                   className="text-gray-500"
                 >
                   {'}'}
@@ -262,10 +314,59 @@ export default function Home() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
+              animate={{
+                y: [0, -10, 0],
+                rotate: [0, 2, 0, -2, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+                delay: index * 0.2,
+              }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <span className="text-4xl mb-2 block group-hover:scale-110 transition-transform duration-300">{skill.icon}</span>
-              <h3 className="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors">{skill.name}</h3>
+              <motion.span 
+                className="text-4xl mb-2 block group-hover:scale-110 transition-transform duration-300"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
+              >
+                {skill.icon}
+              </motion.span>
+              <motion.h3 
+                className="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors"
+                animate={{
+                  color: ["#3B82F6", "#60A5FA", "#3B82F6"],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
+              >
+                {skill.name}
+              </motion.h3>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"
+                animate={{
+                  x: ["-100%", "100%"],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
             </motion.div>
           ))}
         </div>
@@ -293,27 +394,26 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center text-blue-500">Featured Projects</h2>
         </motion.div>
 
+      
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               title: "Hospital Management System",
               description: "A comprehensive hospital management system for managing patient records, appointments, and medical staff efficiently.",
               technologies: ["React", "Node.js", "MySql", "Express"],
-              image: "/hospital.avif",
               link: "#"
             },
             {
               title: "School Management System",
               description: "An integrated school management platform for handling student records, attendance, and academic performance tracking.",
               technologies: ["Next.js", "MySQL", "Express", "Node.js"],
-              image: "/school1.jpg",
               link: "#"
             },
             {
               title: "POS Application",
               description: "A modern Point of Sale system with inventory management, sales tracking, and customer management features.",
               technologies: ["React", "Node.js", "Firebase", "Express"],
-              image: "/pos.avif",
               link: "#"
             }
           ].map((project, index) => (
@@ -321,39 +421,123 @@ export default function Home() {
               key={project.title}
               className="bg-gray-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gray-900/50 group-hover:bg-gray-900/30 transition-colors"></div>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-2 py-1 bg-blue-500/10 text-blue-400 text-sm rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              {/* Code Editor Display */}
+              <div className="bg-gray-900">
+                <div className="flex items-center px-4 py-2 bg-gray-800 border-b border-gray-700">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="ml-4 text-sm text-gray-400">{project.title.toLowerCase().replace(/\s+/g, '-')}.ts</div>
                 </div>
+                
+                <div className="p-4 font-mono text-sm">
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-gray-500"
+                  >
+                    // Project Details
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-gray-500"
+                  >
+                    const project = {'{'}
+                  </motion.div>
+                  <div className="ml-4">
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="text-blue-400"
+                    >
+                      name:
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.8 }}
+                      className="text-green-400 ml-4"
+                    >
+                      "{project.title}",
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.0 }}
+                      className="text-blue-400"
+                    >
+                      description:
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.2 }}
+                      className="text-green-400 ml-4"
+                    >
+                      "{project.description}",
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.4 }}
+                      className="text-blue-400"
+                    >
+                      tools:
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.6 }}
+                      className="text-yellow-400 ml-4"
+                    >
+                      {JSON.stringify(project.technologies)},
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.8 }}
+                      className="text-blue-400"
+                    >
+                      myRole:
+                    </motion.div>
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 2.0 }}
+                      className="text-green-400 ml-4"
+                    >
+                      "Full Stack Developer"
+                    </motion.div>
+                  </div>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2.2 }}
+                    className="text-gray-500"
+                  >
+                    {'}'}
+                  </motion.div>
+                  
+                  {/* Animated Cursor */}
+                  <motion.div 
+                    className="inline-block w-2 h-4 bg-blue-500"
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ repeat: Infinity, duration: 1 }}
+                  ></motion.div>
+                </div>
+              </div>
+
+              <div className="p-4 border-t border-gray-800">
                 <motion.a
                   href={project.link}
                   className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
