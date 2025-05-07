@@ -290,13 +290,6 @@ export default function Home() {
                 y: [0, -10, 0],
                 rotate: [0, 2, 0, -2, 0],
               }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-                delay: index * 0.2,
-              }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <motion.span 
